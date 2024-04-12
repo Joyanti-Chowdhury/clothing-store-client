@@ -1,0 +1,351 @@
+[ 
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/h9YShB8/Tshirt9.jpg",
+    "title": "Basic Crewneck T-Shirt",
+    "price": 12.99,
+    "rating": 4.5,
+    "category": "T-shirts",
+    "description": "A classic crewneck t-shirt made from soft cotton fabric, perfect for everyday wear."
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/ssd47yw/jacket8.jpg",
+    "title": "Skinny jackets",
+    "price": 39.99,
+    "rating": 4.2,
+    "category": "Jackets",
+    "description": "Slim-fit jeans crafted from stretch denim for a comfortable yet stylish look."
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/HBkVYyT/Tshirt4.jpg",
+    "title": "Floral Print Maxi T-shirt",
+    "price": 59.99,
+    "rating": 4.8,
+    "category": "T-shirts",
+    "description": "A flowy maxi dress featuring a vibrant floral print, perfect for summer outings."
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/MDTLvqC/jacket6.jpg",
+    "title": "Denim Jacket",
+    "price": 69.99,
+    "rating": 4.7,
+    "category": "Jackets",
+    "description": "A classic denim jacket with button-up closure and front pockets, ideal for layering."
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/w7s8c5g/shirt3.jpg",
+    "title": "Canvas Sneakers shirt",
+    "price": 29.99,
+    "rating": 4.4,
+    "category": "Shirt",
+    "description": "Casual canvas sneakers with a lace-up design, perfect for everyday wear."
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/gtF0fH5/shirt5.jpg",
+    "title": "Pleated Shirt",
+    "price": 34.99,
+    "rating": 4.6,
+    "category": "Shirt",
+    "description": "A cute mini skirt featuring pleated detailing, great for creating a chic look."
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/NnHCCcN/jacket3.jpg",
+    "title": "Cable Knit Sweater",
+    "price": 54.99,
+    "rating": 4.3,
+    "category": "jacket",
+    "description": "A cozy cable knit sweater perfect for staying warm during chilly days."
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/W5pDhXG/kids2.jpg",
+    "title": "Chino Shorts",
+    "price": 29.99,
+    "rating": 4.5,
+    "category": "kids",
+    "description": "Classic chino shorts made from lightweight cotton, ideal for summer adventures."
+  },
+  {
+    "id": 9,
+    "image": "https://i.ibb.co/b27NPHb/blazer3.jpg",
+    "title": "Classic Single-Breasted Blazer",
+    "price": 79.99,
+    "rating": 4.7,
+    "category": "Blazers",
+    "description": "A timeless single-breasted blazer crafted from high-quality wool blend fabric."
+  },
+  {
+    "id": 10,
+    "image": "https://i.ibb.co/sPz4Wf4/kids9.jpg",
+    "title": "kids T-shirt",
+    "price": 19.99,
+    "rating": 4.6,
+    "category": "kids",
+    "description": "A genuine leather belt with a classic buckle closure, perfect for adding a finishing touch to your outfit."
+  },
+  {
+    "id": 11,
+    "image": "https://i.ibb.co/SQhqZPs/kids8.jpg",
+    "title": "Kids' Graphic T-Shirt",
+    "price": 9.99,
+    "rating": 4.5,
+    "category": "T-shirts",
+    "description": "A fun graphic t-shirt for kids featuring their favorite cartoon characters."
+  },
+  {
+    "id": 12,
+    "image": "https://i.ibb.co/JcHxpnX/kids7.jpg",
+    "title": "Kids' Denim Overalls",
+    "price": 24.99,
+    "rating": 4.2,
+    "category": "Skirts",
+    "description": "Adorable denim overalls for kids, perfect for playtime and casual outings."
+  },
+  {
+    "id": 13,
+    "image": "https://i.ibb.co/6gZHPb4/kids1.jpg",
+    "title": "Girls' Floral Print Dress",
+    "price": 19.99,
+    "rating": 4.8,
+    "category": "Dresses",
+    "description": "A charming floral print dress for girls, ideal for parties and special occasions."
+  },
+  {
+    "id": 14,
+    "image": "https://i.ibb.co/dpq75S1/kids4.jpg",
+    "title": "Boys' Hooded Jacket",
+    "price": 29.99,
+    "rating": 4.7,
+    "category": "Jackets",
+    "description": "A cozy hooded jacket for boys, perfect for keeping warm during outdoor activities."
+  },
+  {
+    "id": 15,
+    "image": "https://i.ibb.co/vH7N1MX/kids10.jpg",
+    "title": "Kids' Slip-On Sneakers",
+    "price": 14.99,
+    "rating": 4.4,
+    "category": "Shirt",
+    "description": "Comfortable slip-on sneakers for kids, great for everyday wear and school."
+  },
+  {
+    "id": 16,
+    "image": "https://i.ibb.co/D1HnRxH/kids2.jpg",
+    "title": "Girls' Printed Skirt",
+    "price": 12.99,
+    "rating": 4.6,
+    "category": "Skirts",
+    "description": "A cute printed skirt for girls, perfect for twirling and playing."
+  },
+  {
+    "id": 17,
+    "image": "https://i.ibb.co/CBgxj16/kids5.jpg",
+    "title": "Boys' Crewneck Sweater",
+    "price": 22.99,
+    "rating": 4.3,
+    "category": "Jackets",
+    "description": "A stylish crewneck sweater for boys, ideal for layering on cooler days."
+  },
+  {
+    "id": 18,
+    "image": "https://i.ibb.co/BCbnPZq/kids9.jpg",
+    "title": "Kids' Denim Shorts",
+    "price": 16.99,
+    "rating": 4.5,
+    "category": "T-shirts",
+    "description": "Classic denim shorts for kids, perfect for summer adventures and playdates."
+  },
+  {
+    "id": 19,
+    "image": "https://i.ibb.co/87JSJ68/kids14.jpg",
+    "title": "Girls' Floral Print Leggings",
+    "price": 11.99,
+    "rating": 4.7,
+    "category": "Leggings",
+    "description": "Comfortable and stylish floral print leggings for girls, great for everyday wear."
+  },
+  {
+    "id": 20,
+    "image": "https://i.ibb.co/2YzJKGD/kids13.jpg",
+    "title": "Kids' Sunglasses",
+    "price": 7.99,
+    "rating": 4.6,
+    "category": "T-shirts",
+    "description": "Cool sunglasses for kids to protect their eyes while looking stylish."
+  }
+
+
+]
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+//  [
+//     {
+//       "id": 1,
+//       "image": "https://example.com/image1.jpg",
+//       "title": "Basic Crewneck T-Shirt",
+//       "price": 12.99,
+//       "rating": 4.5,
+//       "category": "T-shirts",
+//       "description": "A classic crewneck t-shirt made from soft cotton fabric, perfect for everyday wear."
+//     },
+//     {
+//       "id": 2,
+//       "image": "https://example.com/image2.jpg",
+//       "title": "Skinny Fit Jeans",
+//       "price": 39.99,
+//       "rating": 4.2,
+//       "category": "Jeans",
+//       "description": "Slim-fit jeans crafted from stretch denim for a comfortable yet stylish look."
+//     },
+//     {
+//       "id": 3,
+//       "image": "https://example.com/image3.jpg",
+//       "title": "Floral Print Maxi Dress",
+//       "price": 59.99,
+//       "rating": 4.8,
+//       "category": "Dresses",
+//       "description": "A flowy maxi dress featuring a vibrant floral print, perfect for summer outings."
+//     },
+//     {
+//       "id": 4,
+//       "image": "https://example.com/image4.jpg",
+//       "title": "Denim Jacket",
+//       "price": 69.99,
+//       "rating": 4.7,
+//       "category": "Jackets",
+//       "description": "A classic denim jacket with button-up closure and front pockets, ideal for layering."
+//     },
+//     {
+//       "id": 5,
+//       "image": "https://example.com/image5.jpg",
+//       "title": "Canvas Sneakers",
+//       "price": 29.99,
+//       "rating": 4.4,
+//       "category": "Shoes",
+//       "description": "Casual canvas sneakers with a lace-up design, perfect for everyday wear."
+//     },
+//     {
+//       "id": 6,
+//       "image": "https://example.com/image6.jpg",
+//       "title": "Pleated Mini Skirt",
+//       "price": 34.99,
+//       "rating": 4.6,
+//       "category": "Skirts",
+//       "description": "A cute mini skirt featuring pleated detailing, great for creating a chic look."
+//     },
+//     {
+//       "id": 7,
+//       "image": "https://example.com/image7.jpg",
+//       "title": "Cable Knit Sweater",
+//       "price": 54.99,
+//       "rating": 4.3,
+//       "category": "Sweaters",
+//       "description": "A cozy cable knit sweater perfect for staying warm during chilly days."
+//     },
+//     {
+//       "id": 8,
+//       "image": "https://example.com/image8.jpg",
+//       "title": "Chino Shorts",
+//       "price": 29.99,
+//       "rating": 4.5,
+//       "category": "Shorts",
+//       "description": "Classic chino shorts made from lightweight cotton, ideal for summer adventures."
+//     },
+//     {
+//       "id": 9,
+//       "image": "https://example.com/image9.jpg",
+//       "title": "Classic Single-Breasted Blazer",
+//       "price": 79.99,
+//       "rating": 4.7,
+//       "category": "Blazers",
+//       "description": "A timeless single-breasted blazer crafted from high-quality wool blend fabric."
+//     },
+//     {
+//       "id": 10,
+//       "image": "https://example.com/image10.jpg",
+//       "title": "Leather Belt",
+//       "price": 19.99,
+//       "rating": 4.6,
+//       "category": "Accessories",
+//       "description": "A genuine leather belt with a classic buckle closure, perfect for adding a finishing touch to your outfit."
+//     }
+//   ]
+  
+
+
+
+
+
+
