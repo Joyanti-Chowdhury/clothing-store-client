@@ -16,7 +16,7 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { fontGrid } from "@mui/material/styles/cssUtils";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/products", {
+  const res = await fetch("https://clothing-store-server-blond.vercel.app/products", {
     next: {
       revalidate: 30,
     },
@@ -46,7 +46,7 @@ const FlashSale = async () => {
 
           <Box  sx={{ textAlign: "left", }}>
        
-       <p sx={{ fontSize: "14px", color: "#1586FD",  }}>Show 1-12 items of 30</p>
+       <Typography sx={{ fontSize: "14px", color: "#1586FD",  }}>Show 1-12 items of 30</Typography>
      </Box>
           <Typography variant="h6" component="p">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque

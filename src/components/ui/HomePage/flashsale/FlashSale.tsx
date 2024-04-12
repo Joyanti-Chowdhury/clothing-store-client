@@ -98,7 +98,7 @@ import Image from 'next/image';
 
 const FlashSale = async() => {
     
-    const res = await fetch("http://localhost:5000/clothes",{
+    const res = await fetch("https://clothing-store-server-blond.vercel.app/clothes",{
         next:{
             revalidate: 30
         }

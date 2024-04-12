@@ -10,7 +10,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 const TrendingProducts = async () => {
-  const res = await fetch("http://localhost:5000/products", {
+  const res = await fetch("https://clothing-store-server-blond.vercel.app/products", {
     next: {
       revalidate: 30,
     },

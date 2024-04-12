@@ -66,7 +66,7 @@ function preventDefault(event: React.MouseEvent) {
 
 const Order = async() => {
 
-    const res = await fetch("http://localhost:5000/products", {
+    const res = await fetch("https://clothing-store-server-blond.vercel.app/products", {
         next: {
           revalidate: 30,
         },

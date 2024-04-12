@@ -23,7 +23,7 @@ interface ExpandMoreProps extends IconButtonProps {
 
 
 const Category = async() => {
-    const res = await fetch("http://localhost:5000/kids",{
+    const res = await fetch("https://clothing-store-server-blond.vercel.app/kids",{
         next:{
             revalidate: 30
         }
