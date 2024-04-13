@@ -23,7 +23,7 @@ const data = [
   createData('15:00', 2000),
   createData('18:00', 2400),
   createData('21:00', 2400),
-  createData('24:00'),
+  // createData('24:00'),
 ];
 
 const Chart = () => {
@@ -45,19 +45,19 @@ const Chart = () => {
                 scaleType: 'point',
                 dataKey: 'time',
                 tickNumber: 2,
-                tickLabelStyle: theme.typography.body2,
+                // tickLabelStyle: theme.typography.body2,
               },
             ]}
             yAxis={[
               {
                 label: 'Sales ($)',
-                labelStyle: {
-                  ...theme.typography.body1,
-                  fill: theme.palette.text.primary,
-                },
-                tickLabelStyle: theme.typography.body2,
-                max: 2500,
-                tickNumber: 3,
+                // labelStyle: {
+                //   ...theme.typography.body1,
+                //   fill: theme.palette.text.primary,
+                // },
+                // tickLabelStyle: theme.typography.body2,
+                // max: 2500,
+                // tickNumber: 3,
               },
             ]}
             series={[
