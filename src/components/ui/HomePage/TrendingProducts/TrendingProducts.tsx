@@ -10,14 +10,17 @@ import GradeIcon from "@mui/icons-material/Grade";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 const TrendingProducts = async () => {
-  const res = await fetch("https://clothing-store-server-blond.vercel.app/products", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://clothing-store-server-blond.vercel.app/products",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
 
   const products = await res.json();
-  console.log(products);
+  // console.log(products);
 
   return (
     <Container>
@@ -67,13 +70,20 @@ const TrendingProducts = async () => {
                       {/* {product.description} */}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                     <Box sx={{ justifyContent: "space-between" }}>
-                        <AttachMoneyIcon /> {product.price}
-                        
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <Box sx={{ justifyContent: "space-between" }}>
+                          <AttachMoneyIcon /> {product.price}
+                        </Box>
+                        <Box sx={{ justifyContent: "space-between" }}>
+                          {" "}
+                          <GradeIcon /> {product.rating}
+                        </Box>
                       </Box>
-                      <Box sx={{ justifyContent: "space-between" }}>  <GradeIcon /> {product.rating}</Box>
-                     </Box>
                     </Typography>
                   </CardContent>
                   <CardActions
@@ -90,12 +100,10 @@ const TrendingProducts = async () => {
               </Grid>
             ))}
           </Grid>
-          <Box sx={{ textAlign: "center" , mt:4}}>
-      
-      <Button variant='outlined' color='primary' sx={{mt:'10px',
-         
-       
-     }}>View All</Button>
+          <Box sx={{ textAlign: "center", mt: 4 }}>
+            <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
+              View All
+            </Button>
           </Box>
         </Container>
       </Box>

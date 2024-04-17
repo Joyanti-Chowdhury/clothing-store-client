@@ -23,7 +23,7 @@ const FlashSale = async () => {
   });
 
   const products = await res.json();
-  console.log(products);
+  // console.log(products);
 
   return (
     <Container>

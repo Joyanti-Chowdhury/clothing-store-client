@@ -155,7 +155,7 @@ const AllProductss = () => {
      
     <List sx={{ width: '100%', maxWidth: 200, bgcolor: 'background.paper',mt: 5 }}>
     <Typography> Ratings </Typography>
-        {[100, 200, 300, 400].map((value) => {
+        {[4.8, 4.5, 4.4, 4.9].map((value) => {
           const labelId = `checkbox-list-label-${value}`;
           
           return (
@@ -174,7 +174,7 @@ const AllProductss = () => {
                     inputProps={{ 'aria-labelledby': labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={`$ ${ value + 100}`} />
+                <ListItemText id={labelId} primary={`* ${ value }`} />
               </ListItemButton>
             </ListItem>
           );
