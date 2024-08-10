@@ -61,17 +61,17 @@ const Products = async () => {
         <Container
           sx={{ margin: "50px auto", backgroundColor: "rgba(20, 20, 20, 0.1)" }}
         >
-          <Grid container spacing={2} sx={{ padding: "5px", mb: 5 }}>
+          <Grid container spacing={2} sx={{ padding: "5px",  }}>
             {products?.map((product: any) => (
               <Grid item xs={12} sm={6} md={3} lg={3} key={product.id}>
                 <Link href={`/product/${product._id}`}>
-                  <Card sx={{ height: "100%" }}>
+                  <Card sx={{ height: "550px" }}>
                     <Box sx={{ position: "relative" }}>
                       <Image
                         src={product.image}
                         alt={product.title}
                         width={400}
-                        height={70}
+                        height={50}
                       />
 
                       <Box>
@@ -114,8 +114,13 @@ const Products = async () => {
                             {" "}
                             <ControlPointIcon></ControlPointIcon>
                           </Box>
+                          
                         </Box>
+                         <Box sx={{ mt:3, p:5, mb:5 }}>
+                         <Button>Details</Button>
+                         </Box>
                       </Typography>
+                      
                     </CardContent>
                     <CardActions
                       sx={{

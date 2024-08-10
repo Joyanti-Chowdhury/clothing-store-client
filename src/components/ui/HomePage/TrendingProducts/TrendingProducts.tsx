@@ -8,6 +8,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import Image from "next/image";
 import GradeIcon from "@mui/icons-material/Grade";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import Link from "next/link";
 
 const TrendingProducts = async () => {
   const res = await fetch(
@@ -27,12 +28,12 @@ const TrendingProducts = async () => {
       <Box
         sx={{
           my: 5,
-          py: 30,
-          backgroundColor: "rgba(20, 20, 20, 0.1)",
-          clipPath: "polygon(0 1%, 100% 20%, 100% 100%, 0 90%)",
+          // py: 30,
+          // backgroundColor: "rgba(20, 20, 20, 0.1)",
+          clipPath: "polygon(1 1%, 100% 20%, 100% 100%, 0 90%)",
         }}
       >
-        <Box sx={{ textAlign: "center", mt: 10 }}>
+        <Box sx={{ textAlign: "center", }}>
           <Typography
             variant="h3"
             component="h1"
@@ -59,7 +60,7 @@ const TrendingProducts = async () => {
                       src={product.image}
                       alt={product.title}
                       width={500}
-                      height={80}
+                      height={600}
                     />
                   </Box>
                   <CardContent>
@@ -79,6 +80,13 @@ const TrendingProducts = async () => {
                         <Box sx={{ justifyContent: "space-between" }}>
                           <AttachMoneyIcon /> {product.price}
                         </Box>
+
+                        {/* <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center gap-2">
+                  <p className=" text-red-400 font-medium mt-1 line-through">${product.price}</p>
+                  <p className=" font-medium mt-1">${product.discountPrice}</p>
+              </div> */}
+
                         <Box sx={{ justifyContent: "space-between" }}>
                           {" "}
                           <GradeIcon /> {product.rating}
@@ -94,16 +102,21 @@ const TrendingProducts = async () => {
                     }}
                   >
                     <Button size="small">Share</Button>
-                    <Button size="small">See More</Button>
+                    <Link href={`/product/${product._id}`}>
+                       <Button size="small">See More</Button>
+                    </Link>
+                   
                   </CardActions>
                 </Card>
               </Grid>
             ))}
           </Grid>
           <Box sx={{ textAlign: "center", mt: 4 }}>
-            <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
+           <Link href="/flash-sale">
+           <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
               View All
             </Button>
+           </Link>
           </Box>
         </Container>
       </Box>

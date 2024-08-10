@@ -11,6 +11,7 @@ import CardActions from '@mui/material/CardActions';
 
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import GradeIcon from '@mui/icons-material/Grade';
+import Link from 'next/link';
 
 
 
@@ -43,7 +44,7 @@ const Category = async() => {
           sx={{
             my: 2,
             py: 2,
-            backgroundColor: "rgba(20, 20, 20, 0.1)",
+            // backgroundColor: "rgba(20, 20, 20, 0.1)",
             // clipPath: "polygon(0 1%, 100% 20%, 100% 100%, 0 90%)",
           }}
         >
@@ -101,8 +102,22 @@ const Category = async() => {
                         paddingBottom: "20px",
                       }}
                     >
-                      <Button size="small">Share</Button>
+                      {/* <Button size="small">Share</Button>
                       <Button size="small">See More</Button>
+                      <Link href={`/kids/${product.id}`}>
+              <Button size="small" >
+                Details
+              </Button>
+            </Link> */}
+
+                <Link href={`/kids?category=${product.category}`}>
+              <Button >
+                Check Out
+              </Button>
+            </Link>
+
+
+
                     </CardActions>
                   </Card>
                 </Grid>

@@ -144,7 +144,7 @@ const FlashSale = async () => {
               flex: 1,
               width: "150px",
               height: "250px",
-              backgroundColor: "rgb(245,245,245 , 1)",
+              // backgroundColor: "rgb(245,245,245 , 1)",
               border: "1px solid rgba(250,250,250, 1)",
               // border:" 1px solid gray",
               borderRadius: "5px",

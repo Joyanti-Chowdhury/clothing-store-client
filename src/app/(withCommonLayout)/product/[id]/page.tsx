@@ -9,13 +9,14 @@ const SingleProductPage = async ({ params } : any) => {
     },
   });
 
-  const products = await res.json();
+  const products = await  res.json();
   // console.log(products);
   return (
     <div>
+      
       <SingleProduct products={products}></SingleProduct>
     </div>
-  );
+  )
 };
 
 export default SingleProductPage;

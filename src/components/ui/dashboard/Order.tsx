@@ -10,6 +10,7 @@ import Title from './Title';
 import product from 'react';
 import { AnySoaRecord } from 'dns';
 import Image from 'next/image';
+import { Delete, Edit } from '@mui/icons-material';
 
 // Generate Order Data
 function createData(
@@ -90,6 +91,7 @@ const Order = async() => {
               <TableCell>Price</TableCell>
               <TableCell>Category</TableCell>
               <TableCell>Product Image</TableCell>
+              <TableCell>Actions</TableCell>
              
             </TableRow>
           </TableHead>
@@ -103,6 +105,15 @@ const Order = async() => {
                 <Image src={product.image} alt={product.title} width={50} height={50} />
                 </TableCell>
                 {/* <TableCell align="right">{`$${row.amount}`}</TableCell> */}
+                
+                <TableCell>
+                <Edit sx={{ color:"green", border:"green 1px solid",}}></Edit>
+                </TableCell>
+                <TableCell>
+           <Delete sx={{ color:"red", border:"red 1px solid",}}></Delete>
+             
+                </TableCell>
+
               </TableRow>
             ))}
           </TableBody>
