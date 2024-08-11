@@ -39,7 +39,9 @@ const router = useRouter()
     formState: { errors },
   } = useForm<IUserData>()
   const onSubmit: SubmitHandler<IUserData> = async(values) => {
+    console.log(values)
    const data = modifyPayloadData(values)
+
     console.log(data)
 
     try {

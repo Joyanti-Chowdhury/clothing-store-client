@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import dynamic from "next/dynamic";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -15,15 +16,22 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Products from "./Products";
+
+const Products = dynamic(() => import("./Products"), {
+  ssr: false,
+});
 import { CheckBox } from "@mui/icons-material";
 
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import productUtils from "./utils_products/utils";
 
-const AllProductss = ({ products }: { products: any }) => {
+const AllProducts = ({ products }: { products: any }) => {
   const [checked, setChecked] = React.useState([0]);
+  const [productArr, setProductArr] = React.useState(products);
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleToggle = (value: number) => () => {
     const currentIndex = checked.indexOf(value);
@@ -38,21 +46,13 @@ const AllProductss = ({ products }: { products: any }) => {
     setChecked(newChecked);
   };
 
-  const [expanded, setExpanded] = React.useState<string | false>(false);
-
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
 
-  const [filteredProducts, setFilteredProducts] = React.useState([]);
-  const [searchTerm, setSearchTerm] = React.useState("");
-  React.useEffect(() => {
-    setFilteredProducts(products);
-  }, [products]);
-
-  const handleCheckboxChange = (filterType: string, value: string) => {
-    const filtered = products.filter((product) => {
+  const handleCheckboxChange = (filterType: string, value: string | number) => {
+    const filtered = productArr.filter((product: any) => {
       switch (filterType) {
         case "category":
           return product.category === value;
@@ -60,28 +60,23 @@ const AllProductss = ({ products }: { products: any }) => {
           const rating = parseFloat(value);
           return product.ratings >= rating && product.ratings < rating + 1;
         case "price":
-          const priceFiltered = checkPriceRange(product.price, value);
-          return priceFiltered;
+          const priceCloth = productUtils.checkPriceRange(value);
+          const getherCloth = product.price < priceCloth.max;
+          const lessCloth = product.price > priceCloth.min;
+          const filterCloth = getherCloth && lessCloth;
+          return filterCloth;
         default:
-          return true;
+          return productArr;
       }
     });
-    setFilteredProducts(filtered);
-  };
-
-  const checkPriceRange = (price: number, range: string) => {
-    const [min, max] = range
-      .split("-")
-      .map((range) => parseFloat(range.trim()));
-    return price >= min && price <= max;
+    setProductArr(filtered);
   };
 
   return (
     <Container
       sx={{
         display: "flex",
-      }}
-    >
+      }}>
       <Box>
         <List
           sx={{
@@ -89,67 +84,25 @@ const AllProductss = ({ products }: { products: any }) => {
             maxWidth: 200,
             bgcolor: "background.paper",
             mt: 5,
-          }}
-        >
+          }}>
           <Typography>Price Range</Typography>
-          {[100, 200, 300, 400].map((value) => {
-            const labelId = `checkbox-list-label-${value}`;
-            {
-              ["0 - 50", "51 - 60", "61 - 70", "71 - 80", "81 - 100"].map(
-                (range, idx) => (
-                  <CheckBox
-                    className="block"
-                    key={idx}
-                    onChange={() => handleCheckboxChange("price", range)}
-                  >
-                    {`$${range}`}
-                  </CheckBox>
-                )
-              );
-            }
- 
+          {productUtils.priceArr.map((value) => {
             return (
               <ListItem
-                sx={{ border: "1px solid gray" }}
+                sx={{ border: "1px solid gray", paddingLeft: "15px" }}
                 key={value}
-                disablePadding
-              >
-                <ListItemButton
-                  role={undefined}
-                  onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": labelId }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={labelId} primary={`$ ${value + 100}`} />
-                </ListItemButton>
+                disablePadding>
+                <FormGroup
+                  onChange={() => handleCheckboxChange("price", value)}>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={"$" + value}
+                  />
+                </FormGroup>
               </ListItem>
             );
           })}
         </List>
-
-
-        <FormGroup>
-      <FormControlLabel control={<Checkbox  />} label="Label" />
-      <FormControlLabel required control={<Checkbox />} label="Required" />
- 
-    </FormGroup>
-
-
-
-
-
-
-
-
-
 
         <Divider />
 
@@ -157,13 +110,11 @@ const AllProductss = ({ products }: { products: any }) => {
           <Typography>Brands</Typography>
           <Accordion
             expanded={expanded === "panel1"}
-            onChange={handleChange("panel1")}
-          >
+            onChange={handleChange("panel1")}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
+              id="panel1bh-header">
               <Typography sx={{ width: "33%", flexShrink: 0 }}>kids</Typography>
               <Typography sx={{ color: "text.secondary" }}></Typography>
             </AccordionSummary>
@@ -171,13 +122,11 @@ const AllProductss = ({ products }: { products: any }) => {
           </Accordion>
           <Accordion
             expanded={expanded === "panel2"}
-            onChange={handleChange("panel2")}
-          >
+            onChange={handleChange("panel2")}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2bh-content"
-              id="panel2bh-header"
-            >
+              id="panel2bh-header">
               <Typography sx={{ width: "33%", flexShrink: 0 }}>
                 Gents
               </Typography>
@@ -187,13 +136,11 @@ const AllProductss = ({ products }: { products: any }) => {
           </Accordion>
           <Accordion
             expanded={expanded === "panel3"}
-            onChange={handleChange("panel3")}
-          >
+            onChange={handleChange("panel3")}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel3bh-content"
-              id="panel3bh-header"
-            >
+              id="panel3bh-header">
               <Typography sx={{ width: "33%", flexShrink: 0 }}>
                 Females
               </Typography>
@@ -203,13 +150,11 @@ const AllProductss = ({ products }: { products: any }) => {
           </Accordion>
           <Accordion
             expanded={expanded === "panel4"}
-            onChange={handleChange("panel4")}
-          >
+            onChange={handleChange("panel4")}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel4bh-content"
-              id="panel4bh-header"
-            >
+              id="panel4bh-header">
               <Typography sx={{ width: "33%", flexShrink: 0 }}>
                 {" "}
                 Accessory
@@ -227,34 +172,21 @@ const AllProductss = ({ products }: { products: any }) => {
             maxWidth: 200,
             bgcolor: "background.paper",
             mt: 5,
-          }}
-        >
+          }}>
           <Typography> Ratings </Typography>
           {[4.8, 4.5, 4.4, 4.9].map((value) => {
-            const labelId = `checkbox-list-label-${value}`;
-
             return (
               <ListItem
                 sx={{ border: "1px solid gray" }}
                 key={value}
-                disablePadding
-              >
-                <ListItemButton
-                  role={undefined}
-                  onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": labelId }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={labelId} primary={`* ${value}`} />
-                </ListItemButton>
+                disablePadding>
+                <FormGroup
+                  onChange={() => handleCheckboxChange("rating", value)}>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={"*" + value}
+                  />
+                </FormGroup>
               </ListItem>
             );
           })}
@@ -262,10 +194,10 @@ const AllProductss = ({ products }: { products: any }) => {
       </Box>
 
       <Box>
-        <Products></Products>
+        <Products products={productArr}></Products>
       </Box>
     </Container>
   );
 };
 
-export default AllProductss;
+export default AllProducts;
