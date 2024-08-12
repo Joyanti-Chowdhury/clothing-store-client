@@ -40,15 +40,15 @@ const router = useRouter()
   } = useForm<IUserData>()
   const onSubmit: SubmitHandler<IUserData> = async(values) => {
     console.log(values)
-   const data = modifyPayloadData(values)
+  //  const data = modifyPayloadData(values)
 
-    console.log(data)
+    // console.log(data)
 
     try {
       
-      const res = await userRegister(data)
+      const res = await userRegister(values)
       // console.log(res)
-      if(res?.data?.id){
+      if(res?.success){
         toast.success(res?.message)
         router.push("/login")
       }

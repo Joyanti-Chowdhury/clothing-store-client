@@ -1,5 +1,7 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
+import CountdownTimer from "./Timer";
 
 const clothes = [
   {
@@ -105,6 +107,7 @@ const clothes = [
 ];
 
 const FlashSale = async () => {
+  const threeHoursInMilliseconds = 3 * 60 * 60 * 1000;
   const res = await fetch(
     "https://clothing-store-server-blond.vercel.app/clothes",
     {
@@ -119,6 +122,15 @@ const FlashSale = async () => {
 
   return (
     <Container>
+
+<Box className="flex items-center justify-center  gap-2 font-bold text-lg mx-auto mt-9">
+          <Typography sx={{ 
+            fontSize: "25px",
+            color: "#1586FD",
+            fontWeight:"bold",
+           }}>Ending in:</Typography>
+          <CountdownTimer duration={threeHoursInMilliseconds} />
+        </Box>
       <Box sx={{ textAlign: "center", mt: 10 }}>
         <Typography
           variant="h3"
@@ -143,7 +155,7 @@ const FlashSale = async () => {
             sx={{
               flex: 1,
               width: "150px",
-              height: "250px",
+              height: "170px",
               // backgroundColor: "rgb(245,245,245 , 1)",
               border: "1px solid rgba(250,250,250, 1)",
               // border:" 1px solid gray",
@@ -159,7 +171,11 @@ const FlashSale = async () => {
 
               "&:hover": {
                 border: "1px solid gray",
-                padding: " 20px 10px",
+                cursor: "pointer",
+                transition: "all 0.5s ease",
+                backgroundColor: "rgb(245,245,245 , 1)",
+                // border:" 1px solid gray",
+                
                 borderRadius: "5px",
               },
             }}
@@ -172,9 +188,11 @@ const FlashSale = async () => {
         ))}
       </Stack>
       <Box sx={{ textAlign: "center", mt: 4 }}>
-        <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
+      <Link href="/flash-sale">
+      <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
           View All
         </Button>
+      </Link>
       </Box>
     </Container>
   );

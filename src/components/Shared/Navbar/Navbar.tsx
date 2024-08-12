@@ -84,12 +84,7 @@ const Navbar = () => {
           <Typography component={Link} href="/flash-sale">
             Flash Sale
           </Typography>
-          <Typography component={Link} href="/contact-us">
-            Contact us
-          </Typography>
-          <Typography component={Link} href="/blog">
-            Blog
-          </Typography>
+         
           <Typography component={Link} href="/dashboard">
             Dashboard
           </Typography>

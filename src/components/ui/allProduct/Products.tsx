@@ -1,3 +1,4 @@
+"use client"
 import {
   Box,
   Button,
@@ -119,7 +120,7 @@ const Products = ({ products }: { products: any }) => {
           </Grid>
         </Container>
         <Box sx={{ textAlign: "center", m: 4 }}>
-          <p>Show 1-12 items of 30</p>
+          <Typography>Show 1-12 items of 30</Typography>
         </Box>
         <hr></hr>
         <Box sx={{ textAlign: "center", mt: 4 }}>

@@ -1,6 +1,6 @@
 "use server"
 
-export const userRegister = async (formData: FormData) => {
+export const userRegister = async (formData: any) => {
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/register`, {
     // const res = await fetch(`http://localhost:5000/api/v1/register`, {

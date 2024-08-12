@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 import Image from "next/image";
 import aboutus from "../../../../assets/about us.jpg";
 
@@ -13,7 +13,7 @@ const AboutUs = () => {
             textAlign: "center",
             mt: 10,
             color: "#1586FD",
-            
+            fontWeight:"bold",
             fontSize: 60,
           }}
         >
@@ -31,6 +31,7 @@ const AboutUs = () => {
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, natus?
         </Typography>
+        <Divider></Divider>
       </Box>
 
       <Box

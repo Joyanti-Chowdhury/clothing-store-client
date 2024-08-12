@@ -31,9 +31,9 @@ const Filtering = ({products} : {products : any}) => {
     };
 
     return (
-        <div>
+        <>
             
-        </div>
+        </>
     );
 };
 

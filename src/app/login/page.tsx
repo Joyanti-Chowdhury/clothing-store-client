@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { userRegister } from '@/services/actions/userRegister';
 import { userLogin } from '@/services/actions/userLogin';
+import { useRouter } from "next/navigation";
+import { toast } from 'sonner';
  export  type FormValues ={  
   
   email: string
@@ -19,9 +21,9 @@ const LoginPage = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormValues>()
+  } = useForm<FormValues>();
 
-
+  const router = useRouter();
   const onSubmit: SubmitHandler<FormValues> = async(values : any) => {
 
 
@@ -30,13 +32,17 @@ const LoginPage = () => {
      try {
        
      const res = await userLogin(values)
-     console.log(res)
+     console.log(res);
+     if (res?.success) {
+      toast.success(res?.message);
+      router.push("/");
+    }
     
      } catch (error : any) {
-       console.log(error.message)
+       console.log(error.message);
  
      }
-   }
+   };
 
 
     return (

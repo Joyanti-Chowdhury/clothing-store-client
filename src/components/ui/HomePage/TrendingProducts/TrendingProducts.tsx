@@ -55,8 +55,18 @@ const TrendingProducts = async () => {
             {products?.slice(0, 6).map((product: any) => (
               <Grid key={product.id} item xs={12} sm={6} md={3} lg={3}>
                 <Card sx={{ height: "100%" }}>
-                  <Box>
+                  <Box sx={
+                    {
+                      
+              "& img": {
+                width: "300px",
+                height: "300px",
+             
+              },
+                    }
+                  }>
                     <Image
+                    className="mt-5 max-2xl:checked:selection:"
                       src={product.image}
                       alt={product.title}
                       width={500}
@@ -96,14 +106,20 @@ const TrendingProducts = async () => {
                   </CardContent>
                   <CardActions
                     sx={{
-                      justifyContent: "space-between",
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: "20px",
+                      alignItems: "center",
 
-                      paddingBottom: "20px",
+                      // backgroundColor: "rgba(20, 20, 20, 0.1)",
+
+
+                     
                     }}
                   >
-                    <Button size="small">Share</Button>
-                    <Link href={`/product/${product._id}`}>
-                       <Button size="small">See More</Button>
+                    
+                    <Link  href={`/product/${product._id}`}>
+                       <Button size="large" className="mx-auto">See Details</Button>
                     </Link>
                    
                   </CardActions>
@@ -112,7 +128,7 @@ const TrendingProducts = async () => {
             ))}
           </Grid>
           <Box sx={{ textAlign: "center", mt: 4 }}>
-           <Link href="/flash-sale">
+           <Link href="/products">
            <Button variant="outlined" color="primary" sx={{ mt: "10px" }}>
               View All
             </Button>

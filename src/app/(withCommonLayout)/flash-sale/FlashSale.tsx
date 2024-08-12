@@ -14,8 +14,10 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import GradeIcon from "@mui/icons-material/Grade";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import { fontGrid } from "@mui/material/styles/cssUtils";
+import CountdownTimer from "@/components/ui/HomePage/flashsale/Timer";
 
 const FlashSale = async () => {
+  const threeHoursInMilliseconds = 3 * 60 * 60 * 1000;
   const res = await fetch("https://clothing-store-server-blond.vercel.app/products", {
     next: {
       revalidate: 30,
@@ -43,6 +45,11 @@ const FlashSale = async () => {
           >
            Flash Sale
           </Typography>
+
+          <Box className="flex items-center justify-center  gap-2 font-bold text-lg mx-auto">
+          <Typography className="font-bold">Ending in:</Typography>
+          <CountdownTimer duration={threeHoursInMilliseconds} />
+        </Box>
 
           <Box  sx={{ textAlign: "left", }}>
        
