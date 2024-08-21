@@ -42,12 +42,9 @@ const router = useRouter()
     console.log(values)
   //  const data = modifyPayloadData(values)
 
-    // console.log(data)
-
     try {
       
       const res = await userRegister(values)
-      // console.log(res)
       if(res?.success){
         toast.success(res?.message)
         router.push("/login")
@@ -58,9 +55,6 @@ const router = useRouter()
 
     }
   }
-
-
-
 
   return (
     <Container>

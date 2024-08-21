@@ -51,7 +51,7 @@ const AllProducts = ({ products }: { products: any }) => {
       setExpanded(isExpanded ? panel : false);
     };
 
-  const handleCheckboxChange = (filterType: string, value: string ) => {
+  const handleCheckboxChange = (filterType: string, value: any ) => {
     const filtered = productArr.filter((product: any) => {
       switch (filterType) {
         case "category":

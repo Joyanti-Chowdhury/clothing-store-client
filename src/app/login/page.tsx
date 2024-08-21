@@ -32,7 +32,7 @@ const LoginPage = () => {
      try {
        
      const res = await userLogin(values)
-     console.log(res);
+    
      if (res?.success) {
       toast.success(res?.message);
       router.push("/");

@@ -8,7 +8,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import  { IconButtonProps } from "@mui/material/IconButton";
 import GradeIcon from "@mui/icons-material/Grade";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ interface ExpandMoreProps extends IconButtonProps {
 
 const Category = async () => {
   const res = await fetch(
-    "https://clothing-store-server-blond.vercel.app/kids",
+    "https://clothing-store-server-blond.vercel.app/categories",
     {
       next: {
         revalidate: 30,
@@ -203,4 +203,4 @@ const Category = async () => {
   );
 };
 
-export default Category;
+export default Category ;
